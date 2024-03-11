@@ -10,14 +10,26 @@ slider = None
 
 imagen = None
 foto = None
+etiqueta = None
 
 def rangoCambia(event):
     global slider
     global foto
+    global etiqueta
     print("Ha cambiado")
     print(slider.get())
     pixeles = foto.load()
     print(pixeles)
+    altura,anchura = foto.size
+    for x in range(0,anchura):
+        for y in range(0,altura):
+            rojo = pixeles[x,y][0]
+            pixeles[x,y] = (rojo,rojo,rojo)
+    #foto.show()
+    mifoto = ImageTk.PhotoImage(foto)
+    print(mifoto)
+    etiqueta.configure(image=mifoto)
+    etiqueta.image = mifoto
 
 def imagenBrillo():
     global slider
@@ -32,6 +44,7 @@ def imagenBrillo():
 def abrirArchivo():
     global principal
     global foto
+    global etiqueta
     print("Abro un archivo")
     imagen = filedialog.askopenfilename(title="Selecciona un archivo")
     if imagen:
