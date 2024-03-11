@@ -12,6 +12,8 @@ imagen = None
 foto = None
 etiqueta = None
 
+imagenoriginal = None
+
 def rangoCambia(event):
     global slider
     global foto
@@ -23,8 +25,11 @@ def rangoCambia(event):
     altura,anchura = foto.size
     for x in range(0,anchura):
         for y in range(0,altura):
-            rojo = pixeles[x,y][0]
-            pixeles[x,y] = (rojo,rojo,rojo)
+            rojo,verde,azul = pixeles[x,y]
+            rojo += round((slider.get()-0.5)*10)
+            verde += round((slider.get()-0.5)*10)
+            azul += round((slider.get()-0.5)*10)
+            pixeles[x,y] = (rojo,verde,azul)
     #foto.show()
     mifoto = ImageTk.PhotoImage(foto)
     print(mifoto)
