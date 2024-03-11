@@ -22,6 +22,9 @@ ventana.geometry(f"{anchura_ventana}x{altura_ventana}+{x_ventana}+{y_ventana}")
 bienvenida.title("Bienvenida")
 ventana.title("Moni v0.1")
 
+bienvenida.iconbitmap("res/icono.ico")
+ventana.iconbitmap("res/icono.ico")
+
 bienvenida.attributes("-topmost", True)
 bienvenida.resizable(False, False)
 
