@@ -1,6 +1,7 @@
 from PIL import Image, ImageTk
 import tkinter as tk
 from ttkbootstrap import Style
+from imports.mimenu import *
 
 def estilizarVentana(bienvenida,ventana):
 
@@ -33,6 +34,8 @@ def estilizarVentana(bienvenida,ventana):
     imagen_bienvenida = Image.open("res/bienvenida.png")
     foto_bienvenida = ImageTk.PhotoImage(imagen_bienvenida)
     tk.Label(bienvenida,image=foto_bienvenida).pack()
+
+    menu(ventana)
 
     ventana.mainloop()
     bienvenida.mainloop()
