@@ -2,13 +2,19 @@ from PIL import Image, ImageTk
 import tkinter as tk
 from tkinter import filedialog
 from ttkbootstrap import Style
+from tkinter import ttk
 
 principal = None
 
 def imagenBrillo():
     print("edito el brillo")
     ventana_brillo = tk.Tk()
+    ventana_brillo.geometry("800x400")
+    ventana_brillo.title("Brillo")
+    slider = ttk.Scale(ventana_brillo)
+    slider.pack(padx=50,pady=50)
     ventana_brillo.mainloop()
+    
 
 def abrirArchivo():
     global principal
