@@ -8,10 +8,16 @@ principal = None
 
 slider = None
 
+imagen = None
+foto = None
+
 def rangoCambia(event):
     global slider
+    global foto
     print("Ha cambiado")
     print(slider.get())
+    pixeles = foto.load()
+    print(pixeles)
 
 def imagenBrillo():
     global slider
@@ -25,6 +31,7 @@ def imagenBrillo():
     
 def abrirArchivo():
     global principal
+    global foto
     print("Abro un archivo")
     imagen = filedialog.askopenfilename(title="Selecciona un archivo")
     if imagen:
