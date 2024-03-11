@@ -1,4 +1,5 @@
 import tkinter as tk
+from imports.variables import *
 
 def bloques(ventana):
     herramientas = tk.Frame(ventana)
@@ -20,3 +21,4 @@ def bloques(ventana):
     ventana.columnconfigure(0,weight=10)
     ventana.columnconfigure(1,weight=80)
     ventana.columnconfigure(2,weight=10)
+    print(prueba)
