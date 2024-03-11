@@ -21,5 +21,7 @@ ventana.geometry(f"{anchura_ventana}x{altura_ventana}+{x_ventana}+{y_ventana}")
 bienvenida.title("Bienvenida")
 ventana.title("Moni v0.1")
 
+bienvenida.attributes("-topmost", True)
+
 ventana.mainloop()
 bienvenida.mainloop()
