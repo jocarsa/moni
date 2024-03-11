@@ -6,16 +6,23 @@ from tkinter import ttk
 
 principal = None
 
+slider = None
+
+def rangoCambia(event):
+    global slider
+    print("Ha cambiado")
+    print(slider.get())
+
 def imagenBrillo():
+    global slider
     print("edito el brillo")
-    ventana_brillo = tk.Tk()
+    ventana_brillo = tk.Toplevel()
     ventana_brillo.geometry("800x400")
     ventana_brillo.title("Brillo")
     slider = ttk.Scale(ventana_brillo)
-    slider.pack(padx=50,pady=50)
-    ventana_brillo.mainloop()
+    slider.pack(padx=50, pady=50)
+    slider.bind("<Motion>", rangoCambia)
     
-
 def abrirArchivo():
     global principal
     print("Abro un archivo")
