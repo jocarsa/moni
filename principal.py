@@ -1,8 +1,11 @@
 import tkinter as tk
 from PIL import Image, ImageTk
+from ttkbootstrap import Style
 
 bienvenida = tk.Tk()
 ventana = tk.Tk()
+
+style = Style(theme="solar")
 
 anchura = ventana.winfo_screenwidth()
 altura = ventana.winfo_screenheight()
