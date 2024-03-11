@@ -5,6 +5,9 @@ from ttkbootstrap import Style
 
 principal = None
 
+def imagenBrillo():
+    print("edito el brillo")
+
 def abrirArchivo():
     global principal
     print("Abro un archivo")
@@ -49,6 +52,7 @@ def menu(ventana):
     menu.add_cascade(label="Editar", menu=editar)
     colores = tk.Menu(menu)
     menu.add_cascade(label="Colores", menu=colores)
+    colores.add_command(label="Brillo", command=imagenBrillo)
     ayuda = tk.Menu(menu)
     menu.add_cascade(label="Ayuda", menu=ayuda)
 
