@@ -6,8 +6,17 @@ ventana = tk.Tk()
 anchura = ventana.winfo_screenwidth()
 altura = ventana.winfo_screenheight()
 
-bienvenida.geometry(f"400x400+{int(anchura/2)-200}+{int(altura/2)-200}")
-ventana.geometry(f"1024x768+{int(anchura/2)-512}+{int(altura/2)-384}")
+anchura_bienvenida = 400
+altura_bienvenida = 400
+x_bienvenida = int(anchura/2)-int(anchura_bienvenida/2)
+y_bienvenida = int(altura/2)-int(altura_bienvenida/2)
+anchura_ventana = 1024
+altura_ventana = 768
+x_ventana = int(anchura/2)-int(anchura_ventana/2)
+y_ventana = int(altura/2)-int(altura_ventana/2)
+
+bienvenida.geometry(f"{anchura_bienvenida}x{altura_bienvenida}+{x_bienvenida}+{y_bienvenida}")
+ventana.geometry(f"{anchura_ventana}x{altura_ventana}+{x_ventana}+{y_ventana}")
 
 ventana.mainloop()
 bienvenida.mainloop()
