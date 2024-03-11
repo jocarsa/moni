@@ -18,5 +18,8 @@ y_ventana = int(altura/2)-int(altura_ventana/2)
 bienvenida.geometry(f"{anchura_bienvenida}x{altura_bienvenida}+{x_bienvenida}+{y_bienvenida}")
 ventana.geometry(f"{anchura_ventana}x{altura_ventana}+{x_ventana}+{y_ventana}")
 
+bienvenida.title("Bienvenida")
+ventana.title("Moni v0.1")
+
 ventana.mainloop()
 bienvenida.mainloop()
