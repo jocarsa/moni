@@ -1,4 +1,5 @@
 import tkinter as tk
+from PIL import Image, ImageTk
 
 bienvenida = tk.Tk()
 ventana = tk.Tk()
@@ -23,6 +24,10 @@ ventana.title("Moni v0.1")
 
 bienvenida.attributes("-topmost", True)
 bienvenida.resizable(False, False)
+
+imagen_bienvenida = Image.open("res/bienvenida.png")
+foto_bienvenida = ImageTk.PhotoImage(imagen_bienvenida)
+tk.Label(bienvenida,image=foto_bienvenida).pack()
 
 ventana.mainloop()
 bienvenida.mainloop()
