@@ -1,7 +1,9 @@
 import tkinter as tk
+from tkinter import filedialog
 
 def abrirArchivo():
     print("Abro un archivo")
+    imagen = filedialog.askopenfilename(title="Selecciona un archivo")
 
 def menu(ventana):
     menu = tk.Menu(ventana)
