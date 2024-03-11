@@ -1,8 +1,55 @@
 from PIL import Image, ImageTk
 import tkinter as tk
 from ttkbootstrap import Style
-from imports.mimenu import *
 from imports.bloquesprincipal import *
+from tkinter import filedialog
+
+principal = None
+
+def bloques(ventana):
+    global principal
+    herramientas = tk.Frame(ventana)
+    herramientas.grid(row=0,column=0)
+
+    tk.Label(herramientas,text="Herramientas").pack()
+
+    principal = tk.Frame(ventana)
+    principal.grid(row=0,column=1)
+
+    tk.Label(principal,text="Principal").pack()
+
+    propiedades = tk.Frame(ventana)
+    propiedades.grid(row=0,column=2)
+
+    tk.Label(propiedades,text="Propiedades").pack()
+
+    ventana.rowconfigure(0,weight=100)
+    ventana.columnconfigure(0,weight=10)
+    ventana.columnconfigure(1,weight=80)
+    ventana.columnconfigure(2,weight=10)
+    print(principal)
+
+def abrirArchivo():
+    global principal
+    print("Abro un archivo")
+    imagen = filedialog.askopenfilename(title="Selecciona un archivo")
+    foto = Image.open(imagen)
+    print(principal)
+    
+
+def menu(ventana):
+    menu = tk.Menu(ventana)
+    ventana.config(menu=menu)
+    archivo = tk.Menu(menu)
+    menu.add_cascade(label="Archivo",menu=archivo)
+    
+    archivo.add_command(label="Abrir archivo",command=abrirArchivo)
+    
+    menu.add_cascade(label="Editar",menu=archivo)
+
+    menu.add_cascade(label="Colores",menu=archivo)
+
+    menu.add_cascade(label="Ayuda",menu=archivo)
 
 def estilizarVentana(bienvenida,ventana):
 
@@ -36,8 +83,9 @@ def estilizarVentana(bienvenida,ventana):
     foto_bienvenida = ImageTk.PhotoImage(imagen_bienvenida)
     tk.Label(bienvenida,image=foto_bienvenida).pack()
 
-    menu(ventana)
+    
     bloques(ventana)
+    menu(ventana)
     
 
     ventana.mainloop()
