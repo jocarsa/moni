@@ -22,6 +22,7 @@ bienvenida.title("Bienvenida")
 ventana.title("Moni v0.1")
 
 bienvenida.attributes("-topmost", True)
+bienvenida.resizable(False, False)
 
 ventana.mainloop()
 bienvenida.mainloop()
