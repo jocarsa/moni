@@ -7,6 +7,8 @@ principal = None
 
 def imagenBrillo():
     print("edito el brillo")
+    ventana_brillo = tk.Tk()
+    ventana_brillo.mainloop()
 
 def abrirArchivo():
     global principal
