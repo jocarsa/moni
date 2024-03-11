@@ -45,12 +45,12 @@ def menu(ventana):
     menu.add_cascade(label="Archivo", menu=archivo)
 
     archivo.add_command(label="Abrir archivo", command=abrirArchivo)
-
-    menu.add_cascade(label="Editar", menu=archivo)
-
-    menu.add_cascade(label="Colores", menu=archivo)
-
-    menu.add_cascade(label="Ayuda", menu=archivo)
+    editar = tk.Menu(menu)
+    menu.add_cascade(label="Editar", menu=editar)
+    colores = tk.Menu(menu)
+    menu.add_cascade(label="Colores", menu=colores)
+    ayuda = tk.Menu(menu)
+    menu.add_cascade(label="Ayuda", menu=ayuda)
 
 def estilizarVentana(ventana):
     style = Style(theme="solar")
